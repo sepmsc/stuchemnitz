@@ -6,3 +6,18 @@ def home(request):
 
 def about(request):
     return render(request, 'aboutus.html')
+
+def chemnitz(request):
+    return render(request, 'chemnitz.html')
+
+def tuchemnitz(request):
+    return render(request, 'tuchemnitz.html')
+
+def dormitory(request):
+    return render(request, 'dormitory.html')
+
+def contact(request):
+    return render(request, 'contactus.html')
+
+def news(request):
+    return render(request, 'news.html')

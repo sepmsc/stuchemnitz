@@ -6,5 +6,10 @@ from tuchemnitz import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('chemnitz/', views.chemnitz, name='chemnitz'),
+    path('tuchemnitz/', views.tuchemnitz, name='tuchemnitz'),
+    path('dormitory/', views.dormitory, name='dormitory'),
+    path('contactus/', views.contact, name='contactus'),
+    path('news/', views.news, name='news'),
 
 ]
