@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# comment is responsible for storing comments from users
 class Comments(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
