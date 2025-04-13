@@ -21,3 +21,6 @@ def contact(request):
 
 def news(request):
     return render(request, 'news.html')
+
+def conversations(request):
+    return render(request, 'conversations.html')
