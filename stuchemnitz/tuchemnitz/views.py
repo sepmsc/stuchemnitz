@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from tuchemnitz.forms import SubmitForm
 
 # Create your views here.
 def home(request):
