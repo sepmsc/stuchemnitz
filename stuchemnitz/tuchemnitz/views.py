@@ -9,10 +9,10 @@ def about(request):
     return render(request, 'aboutus.html')
 
 def chemnitz(request):
-    return render(request, 'chemnitz.html')
+    return render(request, 'stadtChemnitz.html')
 
 def tuchemnitz(request):
-    return render(request, 'tuchemnitz.html')
+    return render(request, 'tchemnitz.html')
 
 def dormitory(request):
     return render(request, 'dormitory.html')
