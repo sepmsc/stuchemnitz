@@ -2,11 +2,13 @@
 <a href="{% url 'about' %}">About Us</a>
 <a href="{% url 'chemnitz' %}">Chemintz</a>
 <a href="{% url 'tuchemnitz' %}">TU Chemnitz</a>
-<a href="{% url 'dormitories' %}">Dormitories</a>
+<a href="{% url 'dormitory' %}">Dormitories</a>
 
 <h1>Conversations</h1>
 
 <form action="" method="post">
+
+    {% csrf_token %}
     <label for="name">Name</label>
     <input type="text" name="name" id="" placeholder="write your name">
     <label for="email">Email</label>
