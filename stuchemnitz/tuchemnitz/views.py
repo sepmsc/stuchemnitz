@@ -1,5 +1,6 @@
 from django.shortcuts import render
 # from tuchemnitz.forms import SubmitForm
+from tuchemnitz.models import Comments
 
 # Create your views here.
 def home(request):
@@ -24,14 +25,15 @@ def news(request):
     return render(request, 'news.html')
 
 def conversations(request):
-    return render(request, 'conversations.html')
-
-def submitview(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
-        comment = request.POST.get('comment')
+        comment = request.POST.get('comments')
 
-        request.save()
-        return render(request, 'submit.html', {'name': name, 'email': email, 'comment': comment})
+        Comments.objects.create(name=name, email=email, comment=comment)
+        # Here you would typically save the comment to the database
+        # For example: Comments.objects.create(name=name, email=email, comment=comment)
+
+        # return render(request, 'submit.html', {'name': name, 'email': email, 'comment': comment})
     
+    return render(request, 'conversations.html')
