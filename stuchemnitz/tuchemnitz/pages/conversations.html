@@ -17,3 +17,10 @@
     <textarea name="comments" id="comments" placeholder="write you comments"></textarea>
     <input type="submit" value="Submit">
 </form>
+
+<h2>Comments</h2>
+<ul>
+    {% for comment in comments %}
+        <li><strong>{{ comment.name }}</strong> ({{ comment.email }})<br>{{ comment.comments }}</li>
+    {% endfor %}
+</ul>
