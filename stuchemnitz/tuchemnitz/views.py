@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from tuchemnitz.forms import SubmitForm
 from tuchemnitz.models import Comments
 
@@ -35,5 +35,6 @@ def conversations(request):
         # For example: Comments.objects.create(name=name, email=email, comment=comment)
 
         # return render(request, 'submit.html', {'name': name, 'email': email, 'comment': comment})
+        return redirect('conversations')
     
-    return render(request, 'conversations.html')
+    return render(request, 'conversations.html', {'comments': Comments.objects.all()})

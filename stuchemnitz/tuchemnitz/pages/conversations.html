@@ -21,6 +21,8 @@
 <h2>Comments</h2>
 <ul>
     {% for comment in comments %}
-        <li><strong>{{ comment.name }}</strong> ({{ comment.email }})<br>{{ comment.comments }}</li>
+        <li><strong>{{ comment.name }}</strong> ({{ comment.email }})<br>{{ comment.comment }}</li>
+        {% empty %}
+            <li>No comments yet.</li>
     {% endfor %}
 </ul>
