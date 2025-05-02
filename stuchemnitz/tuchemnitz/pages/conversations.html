@@ -6,17 +6,21 @@
 
 <h1>Conversations</h1>
 
-<form action="" method="post">
 
-    {% csrf_token %}
-    <label for="name">Name</label>
-    <input type="text" name="name" id="" placeholder="write your name">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="" placeholder="write your email">
-    <label for="comments">Comment:</label>
-    <textarea name="comments" id="comments" placeholder="write you comments"></textarea>
-    <input type="submit" value="Submit">
-</form>
+<div class="comment-form">
+    <form action="" method="post">
+
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" name="name" id="" placeholder="write your name">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="" placeholder="write your email">
+        <label for="comments">Comment:</label>
+        <textarea name="comments" id="comments" placeholder="write you comments"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+    <input type="submit" value="reply">
+</div>
 
 <h2>Comments</h2>
 <ul>
