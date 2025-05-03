@@ -19,13 +19,13 @@
         <textarea name="comments" id="comments" placeholder="write you comments"></textarea>
         <input type="submit" value="Submit">
     </form>
-    <input type="submit" value="reply">
 </div>
 
 <h2>Comments</h2>
 <ul>
     {% for comment in comments %}
         <li><strong>{{ comment.name }}</strong> ({{ comment.email }})<br>{{ comment.comment }}</li>
+        <input type="submit" value="reply">
         {% empty %}
             <li>No comments yet.</li>
     {% endfor %}
