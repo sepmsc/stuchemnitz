@@ -30,3 +30,19 @@
             <li>No comments yet.</li>
     {% endfor %}
 </ul>
+
+<script>
+    function showReplForm(commentId) {
+        const form = document.getElementById('reply-form-' + commentId);
+        
+        container.innerHTML = ''; // Clear the container before appending the form
+
+        const Template = document.getElementById('reply-form-template').cloneNode(true);
+        Template.style.display = 'block'; // Show the cloned template
+
+        const input = Template.querySelector('input[name="comment_id"]');
+        input.value = commentId; // Set the comment ID in the input field
+
+        container.appendChild(Template); // Append the cloned template to the container
+    }
+</script>
