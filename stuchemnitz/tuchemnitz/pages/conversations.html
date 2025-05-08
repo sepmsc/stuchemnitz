@@ -25,7 +25,7 @@
 <ul>
     {% for comment in comments %}
         <li><strong>{{ comment.name }}</strong> ({{ comment.email }})<br>{{ comment.comment }}</li>
-        <input type="submit" value="reply">
+        <button>Reply</button>
         {% empty %}
             <li>No comments yet.</li>
     {% endfor %}
