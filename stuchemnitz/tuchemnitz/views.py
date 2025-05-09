@@ -15,6 +15,9 @@ def chemnitz(request):
 def tuchemnitz(request):
     return render(request, 'tchemnitz.html')
 
+# def map(request):
+#     return render(request, 'tchemnitz.html')
+
 def dormitory(request):
     return render(request, 'dormitory.html')
 

@@ -4,3 +4,28 @@
 <a href="{% url 'about' %}">About Us</a>
 <a href="{% url 'chemnitz' %}">Chemnitz</a>
 <a href="{% url 'dormitory' %}">Dormitories</a>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <h2>Map Example</h2>
+  <div id="map" style="height: 500px;"></div>
+
+  <script>
+    // Initialize the map
+    var map = L.map('map').setView([51.505, -0.09], 13); // (lat, lng), zoom
+
+    // Add a tile layer (the base map)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Optional: Add a marker
+    L.marker([51.505, -0.09]).addTo(map)
+      .bindPopup('Hello from London!')
+      .openPopup();
+  </script>
+</body>
