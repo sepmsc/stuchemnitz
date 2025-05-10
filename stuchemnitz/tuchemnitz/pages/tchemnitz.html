@@ -16,7 +16,7 @@
 
   <script>
     // Initialize the map
-    var map = L.map('map').setView([51.505, -0.09], 13); // (lat, lng), zoom
+    var map = L.map('map').setView([50.83332, 12.916667], 13); // (lat, lng), zoom
 
     // Add a tile layer (the base map)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -24,8 +24,8 @@
     }).addTo(map);
 
     // Optional: Add a marker
-    L.marker([51.505, -0.09]).addTo(map)
-      .bindPopup('Hello from London!')
+    L.marker([50.83332, 12.916667]).addTo(map)
+      .bindPopup('Chemntz')
       .openPopup();
   </script>
 </body>
