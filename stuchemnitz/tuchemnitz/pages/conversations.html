@@ -24,14 +24,18 @@
 <h2>Comments</h2>
 <ul>
     {% for comment in comments %}
-        <li><strong>{{ comment.name }}</strong> ({{ comment.email }})<br>{{ comment.comment }}</li>
-        <button>Reply</button>
+        <li><strong>{{ comment.name }}</strong> ({{ comment.email }})<br>{{ comment.comment }}
+            <br>{{ comment.id }}</li>
+        <button onclick="showReplForm({comment_id})">Reply</button>
         {% empty %}
             <li>No comments yet.</li>
     {% endfor %}
 </ul>
 
 <script>
+
+
+
     function showReplForm(commentId) {
         const form = document.getElementById('reply-form-' + commentId);
         
