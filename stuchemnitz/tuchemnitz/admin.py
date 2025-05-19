@@ -12,3 +12,9 @@ class ReplyAdmin(admin.ModelAdmin):
     search_fields = ('comment__name', 'reply')
     list_filter = ('created_at',)
     ordering = ('-created_at',)
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'parent')
+    search_fields = ('name', 'description')
+    list_filter = ('parent',)
+    ordering = ('name',)
