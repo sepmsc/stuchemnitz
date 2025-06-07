@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-# from tuchemnitz.forms import SubmitForm
+from tuchemnitz.forms import AdminSignupForm
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required, user_passes_test
 from tuchemnitz.models import Comments
 
 # Create your views here.
@@ -41,3 +43,20 @@ def conversations(request):
         return redirect('conversations')
     
     return render(request, 'conversations.html', {'comments': Comments.objects.all()})
+
+def admin_signup(request):
+    if request.method == 'POST':
+        form = AdminSignupForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            login(request, user)
+            return redirect('admin_profile')  # Redirect to a success page or similar
+    else:
+        form = AdminSignupForm()
+
+    return render(request, 'admin_signup.html', {'form': form})  # Render the signup form
+
+@login_required
+@user_passes_test(lambda u: u.is_staff)
+def admin_profile(request):
+    return render(request, 'admin_profile.html', {'user': request.user})  # Render the admin profile page
